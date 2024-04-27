@@ -55,7 +55,7 @@ async function displayQueue(message) {
           iconURL: 'https://cdn.discordapp.com/attachments/1223544847047065662/1224631171766292500/9596-wrong.gif?ex=661e31a7&is=660bbca7&hm=0176645a3d582d6b93c8447a02cd7b1e7923b316212336fdc0b23b96b5e8ab4b&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('**The Queue is currently empty consider adding songs.**')
+      .setDescription('**Queue đang trống kìa ní ơi thêm nhạc đi.**')
       .setColor('#ff0000');
     return message.reply({ embeds: [embed] });
   }
@@ -87,7 +87,7 @@ async function playNextSong(connection, message) {
           iconURL: 'https://cdn.discordapp.com/attachments/1223544847047065662/1224631831178248347/4381-anouncements-animated.gif?ex=661e3245&is=660bbd45&hm=25f3b77985241a4612a8f4946a4631f8add618d9f36a0d9157fb4821aa6d2a0e&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-     .setDescription('**Oops! The queue is empty. Our bot is taking a break. See you later!**')
+     .setDescription('**Oops! Queue trống kìa. Thôi tui đi nghỉ ngơi nho. haha gặp lại mấy ní sau!**')
 
       .setColor('#ffcc00');
     message.reply({ embeds: [embed] });
@@ -129,14 +129,14 @@ async function playSong(connection, searchQuery, message) {
 
     const embed = new EmbedBuilder()
       .setAuthor({
-        name: 'Currently playing a Track',
+        name: 'Chơi nhạc nào :))) ',
         iconURL: 'https://cdn.discordapp.com/attachments/1140841446228897932/1144671132948103208/giphy.gif', 
         url: 'https://discord.gg/FUEHs7RCqz'
       })
-      .setDescription(`\n ‎ \n▶️ **Details :** [${video.title}](${youtubeLink})\n▶️ **Enjoy the Ultimate YouTube Music Experience ** \n▶️ **If link breaks playback try to give query**`)
+      .setDescription(`\n ‎ \n▶️ **Details :** [${video.title}](${youtubeLink})\n▶️ **Tận hưởng music đi ní ơi ** \n▶️ **If link breaks playback try to give query**`)
       .setImage(video.thumbnails.high.url) 
       .setColor('#2b71ec')
-      .setFooter({ text: 'More info - Use Help command Default : ?help' });
+      .setFooter({ text: 'More info - Use Help command Default : !help' });
 
     const row = new ActionRowBuilder()
       .addComponents(
@@ -199,7 +199,7 @@ async function playSong(connection, searchQuery, message) {
           iconURL: 'https://cdn.discordapp.com/attachments/1175488636033175602/1175488721253052426/right-chevron-.png?ex=656b6a2e&is=6558f52e&hm=50647a73aa51cb35f25eba52055c7b4a1b56bbf3a6d13adc15b52dc533236956&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-          .setDescription('**Let\'s move on to the next beat...**');
+          .setDescription('**Chuyển sang bài nè...**');
             interaction.reply({ embeds: [embed] });
           } else {
             interaction.deferUpdate();
@@ -240,7 +240,7 @@ function pausePlayback() {
           iconURL: 'https://cdn.discordapp.com/attachments/1175488636033175602/1175488720519049337/pause.png?ex=656b6a2e&is=6558f52e&hm=6695d8141e37330b5426f146ec6705243f497f95f08916a40c1db582c6e07d7e&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('**Halt the beats! Music taking a break..**')
+      .setDescription('**Tạm nghỉ xíu.Tui mệt rùi :)))**')
       .setColor('#2b71ec');
 
     currentMessage.reply({ embeds: [embed] });
@@ -251,7 +251,7 @@ function pausePlayback() {
           iconURL: 'https://cdn.discordapp.com/attachments/1223544847047065662/1224631171766292500/9596-wrong.gif?ex=661e31a7&is=660bbca7&hm=016645a3d582d6b93c8447a02cd7b1e7923b3162127336fdc0b23b96b5e8ab4b&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('**The bot is not currently playing any song.**')
+      .setDescription('**Chán quá không có music để hát.**')
       .setColor('#ff0000');
     currentMessage.reply({ embeds: [embed] });
   }
@@ -268,7 +268,7 @@ function resumePlayback() {
           iconURL: 'https://cdn.discordapp.com/attachments/1175488636033175602/1175488720762310757/play.png?ex=656b6a2e&is=6558f52e&hm=ae4f01060fe8ae93f062d6574ef064ca0f6b4cf40b172f1bd54d8d405809c7df&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('**Back in action! Let the beats roll..**')
+      .setDescription('**Oh no nhạc lên lại rồi..**')
       .setColor('#2b71ec');
     currentMessage.reply({ embeds: [embed] });
   } else {
@@ -278,7 +278,7 @@ function resumePlayback() {
           iconURL: 'https://cdn.discordapp.com/attachments/1223544847047065662/1224631171766292500/9596-wrong.gif?ex=661e31a7&is=660bbca7&hm=6645a3d582d6b93c8447a02cd7b1e7923b316212017336fdc0b23b96b5e8ab4b&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('**The bot is not currently paused.**')
+      .setDescription('**Tạm ngưng, ún nước.**')
       .setColor('#ff0000');
 
     currentMessage.reply({ embeds: [embed] });
@@ -292,12 +292,12 @@ module.exports = {
   execute: async (message, args) => {
     const voiceChannel = message.member.voice.channel;
     if (!voiceChannel) {
-      return message.reply('**⚠️ You need to be in a voice channel!**');
+      return message.reply('**⚠️ Muốn chơi nhạc ư, vào voice đi tính tiếp!**');
     }
 
     const searchQuery = args.join(' ');
     if (!searchQuery) {
-      return message.reply('**▶️ Please provide a search query!**');
+      return message.reply('**▶️ Đưa link đây**');
     }
 
     const connection = joinVoiceChannel({
@@ -318,7 +318,7 @@ module.exports = {
         iconURL: 'https://cdn.discordapp.com/attachments/1156866389819281418/1157218651179597884/1213-verified.gif?ex=6517cf5a&is=65167dda&hm=cf7bc8fb4414cb412587ade0af285b77569d2568214d6baab8702ddeb6c38ad5&', 
         url: 'https://discord.gg/FUEHs7RCqz'
     })
-        .setDescription(`**Your song has been queued up and is ready to play!**`)
+        .setDescription(`**Music vào hàng chờ xíu tui hát cho ní ơi**`)
         .setColor('#14bdff')
         .setFooter({ text: 'Use ?queue for more Information' });
       return message.reply({ embeds: [embed] });
