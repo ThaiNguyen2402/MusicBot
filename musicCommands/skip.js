@@ -11,7 +11,7 @@ module.exports = {
     if (!voiceChannel) {
       const embed = new EmbedBuilder()
         .setColor('#FF0000')
-        .setDescription('🐼 You need to be in a voice channel to use this command!');
+        .setDescription('🐼 Ê vào voice đi tính tiếp ní!');
       return message.reply({ embeds: [embed] });
     }
 
@@ -38,13 +38,13 @@ module.exports = {
       } else {
         const embed = new EmbedBuilder()
           .setColor('#FFFF00')
-          .setDescription('**❌ No songs in the queue to skip.**');
+          .setDescription('**❌ Không có nhạc trong queue làm sao mà skip.**');
         return message.reply({ embeds: [embed] });
       }
     } else {
       const embed = new EmbedBuilder()
         .setColor('#FF0000')
-        .setDescription('**❌ There is no song to skip. Queue is empty.**');
+        .setDescription('**❌ Hết nhạc rồi. Queue hết đi về.**');
       return message.reply({ embeds: [embed] });
     }
   },
