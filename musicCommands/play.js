@@ -292,7 +292,7 @@ module.exports = {
   execute: async (message, args) => {
     const voiceChannel = message.member.voice.channel;
     if (!voiceChannel) {
-      return message.reply('**⚠️ Muốn chơi nhạc ư, vào voice đi tính tiếp!**');
+      return message.reply('**⚠️ Muốn chơi nhạc ư, vào voice đi tính tiếp =)))!**');
     }
 
     const searchQuery = args.join(' ');
