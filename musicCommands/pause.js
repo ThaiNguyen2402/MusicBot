@@ -9,7 +9,7 @@ module.exports = {
     if (currentConnection && currentConnection.state.status === VoiceConnectionStatus.Ready) {
       playModule.pause();
     } else {
-      message.reply('❌ The bot is not currently playing any music.');
+      message.reply('❌ Không có nhạc nào để quẩy.');
     }
   },
 };
